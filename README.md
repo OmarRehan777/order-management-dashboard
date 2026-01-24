@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+README.md
 
-## Getting Started
+Order Management Dashboard
 
-First, run the development server:
+A modern admin dashboard for managing and reviewing orders, built with
+Next.js and Tailwind CSS. The project focuses on clean architecture,
+scalability, and responsive design for real-world admin workflows.
 
-```bash
+---
+
+🚀 Tech Stack
+
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- JavaScript (ES6+)
+
+---
+
+✨ Features
+
+- Responsive admin dashboard layout (desktop & mobile)
+- Orders table with adaptive columns for different screen sizes
+- Order details page with structured information
+- Sidebar navigation with active state for nested routes
+- Accessible, fully clickable order rows
+- Authentication page (UI only)
+
+---
+
+📸 Screenshots
+
+Desktop
+![Home Desktop](screenshots-01-home-desktop.png)
+![Order History Desktop](screenshots-02-order-history-desktop.png)
+![Order Details Desktop](screenshots-03-order-details-desktop.png)
+
+Mobile
+![Home Mobile](screenshots-04-home-mobile.png)
+![Order History Mobile](screenshots-05-order-history-mobile.png)
+![Order Details Mobile](screenshots-06-order-details-mobile.png)
+![Mobile Sidebar](screenshots-07-mobile-navbar.png)
+
+---
+
+🛠️ Running Locally
+
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📌 Project Status
+This project is still in progress. More features such as products
+management, statistics, and backend integration will be added.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+👤 Author
+Omar Rehan
+Frontend Software Engineer
