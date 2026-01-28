@@ -15,4 +15,4 @@ export default function page() {
 			<OrderCard></OrderCard>
 		</div>
 	);
-} // pt - 22;
+}

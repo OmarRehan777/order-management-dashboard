@@ -1,6 +1,17 @@
 import { cloneElement } from "react";
+import type { ReactElement } from "react";
 
-export default function NavbarOption({ children, name, active }) {
+type NavbarOptionProps = {
+	children: ReactElement<{ className?: string }>;
+	name: string;
+	active: boolean;
+};
+
+export default function NavbarOption({
+	children,
+	name,
+	active,
+}: NavbarOptionProps) {
 	const iconsStyles = "text-2xl  shrink-0";
 
 	const icon = cloneElement(children, {

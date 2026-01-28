@@ -29,7 +29,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-  ],
+, "app/components/ui/OrangeButton.tsx", "app/layout.tsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,7 +1,11 @@
 import ProfileComponent from "./ProfileComponent";
 import SearchBar from "./SearchBar";
 
-export default function Header({ className }) {
+type HeaderProps = {
+	className?: string;
+};
+
+export default function Header({ className }: HeaderProps) {
 	return (
 		<div
 			className={` ${className} Header-div

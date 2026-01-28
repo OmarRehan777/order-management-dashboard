@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import { IoMdHome } from "react-icons/io";
 import { FaHistory, FaShoppingCart } from "react-icons/fa";
 import { IoStatsChart } from "react-icons/io5";

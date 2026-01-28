@@ -2,7 +2,13 @@ import Navbar from "../components/layout/navbar/Navbar";
 import Header from "../components/layout/header/Header";
 import MainContentContainer from "./MainContentContainer";
 
-export default function layout({ children }) {
+import type { ReactNode } from "react";
+
+type LayoutProps = {
+	children: ReactNode;
+};
+
+export default function layout({ children }: LayoutProps) {
 	return (
 		<div className="flex h-screen w-screen">
 			<Navbar className={""}></Navbar>

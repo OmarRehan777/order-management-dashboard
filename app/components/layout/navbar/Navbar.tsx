@@ -6,7 +6,11 @@ import BurgerButton from "./BurgerButton";
 import NavbarOverlay from "./NavbarOverlay";
 import { usePathname } from "next/navigation";
 
-export default function Navbar({ className }) {
+type NavbarProps = {
+	className?: string;
+};
+
+export default function Navbar({ className = "" }: NavbarProps) {
 	const [isOpen, setIsOpen] = useState(false);
 	const currentPathName = usePathname();
 
@@ -37,7 +41,7 @@ export default function Navbar({ className }) {
 				{/* logo */}
 				<Logo></Logo>
 
-				<NavbarOptionsGroup setIsOpen={setIsOpen}></NavbarOptionsGroup>
+				<NavbarOptionsGroup></NavbarOptionsGroup>
 			</div>
 		</div>
 	);

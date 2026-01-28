@@ -1,4 +1,9 @@
-export default function ({ setIsOpen }) {
+
+type NavbarOverlayProps = {
+	setIsOpen: (isOpen: boolean) => void;
+};
+
+export default function NavbarOverlay({ setIsOpen }: NavbarOverlayProps) {
 	return (
 		<div
 			onClick={() => setIsOpen(false)}

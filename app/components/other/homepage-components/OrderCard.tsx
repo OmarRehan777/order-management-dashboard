@@ -25,7 +25,7 @@ export default function OrderCard() {
 
 			{/* order-content */}
 			<div className="card-content h-5/8 flex flex-col gap-4 items-center">
-				{itemsArray.slice(0, 2).map((item) => {
+				{itemsArray.slice(0, 3).map((item) => {
 					return (
 						<OrderItem
 							key={item.id}
