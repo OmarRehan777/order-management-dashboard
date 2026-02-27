@@ -1,51 +1,57 @@
 import ViewAll from "./ViewAll";
 import OrderItem from "./OrderItem";
-import OrderStatus from "./OrderStatus";
+import OrderStatusCard from "./OrderStatusCard";
+import { Order } from "../../../../types/order";
+import { calcOrderTotal } from "../../../lib/calcOrderTotal";
 
-export default function OrderCard() {
-	const itemsArray = [
-		{ id: 1, item: "Mocca", count: 1 },
-		{ id: 2, item: "Cappuccino", count: 2 },
-		{ id: 3, item: "Espresso", count: 1 },
-		{ id: 4, item: "Latte", count: 1 },
-		// { id: 5, item: "Macchiato", count: 1 },
-	];
+type orderCardProps = { order: Order };
+
+export default function OrderCard({ order }: orderCardProps) {
 	return (
 		<div className=" order-card-container transition-transform hover:-translate-y-2 duration-300 shrink-0 w-60 h-80 xs:w-80 xs:h-100 gradient-grey-4 rounded-2xl p-4 flex flex-col justify-between ">
-			{/* header */}
-			<div className="card-header  h-1/7 flex justify-between ">
+			{/* ---------------------------- header ---------------------------------- */}
+			<div className="card-header  h-1/8 pb-1 flex justify-between ">
 				<div className="order-meta-data flex flex-col justify-center">
-					<div className="order-number font-bold">Order #126</div>
-					<div className="order-date text-sm font-normal text-grey-5">
-						2026-1-3 15:34
+					<div className="order-number font-bold">
+						#{order.orderNumber}
+					</div>
+					<div className="order-date text-xs font-normal text-grey-5">
+						{order.createdAtISO
+							.slice(0, 16)
+							.replace("Z", " ")
+							.split("T")
+							.join(" at ")}
 					</div>
 				</div>
-				<div className="order-customer-prof shrink-0 aspect-square h-full rounded-full bg-grey-5"></div>
+				<div className="order-customer-data  shrink-0 text-sm xs:text-base font-medium">
+					{order.customerName}
+				</div>
 			</div>
 
-			{/* order-content */}
-			<div className="card-content h-5/8 flex flex-col gap-4 items-center">
-				{itemsArray.slice(0, 3).map((item) => {
+			{/* --------------------------- order-content -------------------------------- */}
+
+			<div className="card-content h-6/9 flex flex-col gap-4 items-center ">
+				{order.items.map((item) => {
 					return (
 						<OrderItem
 							key={item.id}
-							item={item.item}
-							count={item.count}
+							productId={item.productId}
+							quantity={item.quantity}
 						></OrderItem>
 					);
 				})}
-				{itemsArray.length > 2 ? <ViewAll></ViewAll> : false}
+				{/* view all icon only appears if order has more than 2 items */}
+				{/* {order.items.length > 2 ? <ViewAll></ViewAll> : false} */}
 			</div>
 
-			{/* footer */}
+			{/* ---------------------------- footer ----------------------------------- */}
 			<div className="card-footer pt-1  border-t border-grey-5/40  h-1/7 flex justify-between items-end">
 				<div className="order-summary h-11/12 flex flex-col justify-center ">
-					<div className="order-items-count text-sm font-normal text-grey-5">
-						X 2 items
+					<div className="order-total text-base font-medium">
+						{calcOrderTotal(order.items).toFixed(2)} EGP
 					</div>
-					<div className="order-total">$14</div>
 				</div>
-				<OrderStatus></OrderStatus>
+				<OrderStatusCard status={order.status}></OrderStatusCard>
 			</div>
 		</div>
 	);

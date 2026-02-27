@@ -71,9 +71,27 @@
 		background-clip: text;
 	}
 
+	.main-scrollbar-orange {
+		&::-webkit-scrollbar {
+			width: 16px;
+		}
+		&::-webkit-scrollbar-track {
+			background: var(--color-grey-4);
+		}
+		&::-webkit-scrollbar-thumb {
+			background: var(--color-orange-3);
+			border-radius: 20px;
+		}
+		&::-webkit-scrollbar-thumb:hover {
+			background: var(--color-orange-4);
+		}
+	}
+
 	.scrollbar-orange {
 		&::-webkit-scrollbar {
 			width: 16px;
+			position : relative ;
+			
 		}
 		&::-webkit-scrollbar-track {
 			background: var(--color-grey-4);

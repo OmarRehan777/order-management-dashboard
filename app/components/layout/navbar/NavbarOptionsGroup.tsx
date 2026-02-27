@@ -6,7 +6,13 @@ import { FaHistory, FaShoppingCart } from "react-icons/fa";
 import { IoStatsChart } from "react-icons/io5";
 import NavbarOption from "./NavbarOption";
 
-export default function NavbarOptionsGroup() {
+type NavbarOptionsGroupProps = {
+	closeNavbar: () => void;
+};
+
+export default function NavbarOptionsGroup({
+	closeNavbar,
+}: NavbarOptionsGroupProps) {
 	const pathname = usePathname();
 
 	// helper function to prevent home option from being always active
@@ -25,14 +31,18 @@ export default function NavbarOptionsGroup() {
 		<div className="w-full flex-1 flex flex-col items-center justify-start gap-2">
 			{/*---------------------------------------------------------------------------------------------*/}
 			{/* Home Navigation Link */}
-			<Link href={"/"} className="w-full">
+			<Link href={"/"} className="w-full" onClick={closeNavbar}>
 				<NavbarOption name="HOME" active={isActive("/")}>
 					<IoMdHome />
 				</NavbarOption>
 			</Link>
 
 			{/* Order History Navigation Link */}
-			<Link href={"/order_history"} className="w-full">
+			<Link
+				href={"/order_history"}
+				className="w-full"
+				onClick={closeNavbar}
+			>
 				<NavbarOption
 					name="ORDER HISTORY"
 					active={isActive("/order_history")}
@@ -42,7 +52,7 @@ export default function NavbarOptionsGroup() {
 			</Link>
 
 			{/* Statistics Navigation Link */}
-			<Link href={"/statistics"} className="w-full">
+			<Link href={"/statistics"} className="w-full" onClick={closeNavbar}>
 				<NavbarOption
 					name="STATISTICS"
 					active={isActive("/statistics")}
@@ -52,7 +62,7 @@ export default function NavbarOptionsGroup() {
 			</Link>
 
 			{/* Products Navigation Link */}
-			<Link href={"/products"} className="w-full">
+			<Link href={"/products"} className="w-full" onClick={closeNavbar}>
 				<NavbarOption name="PRODUCTS" active={isActive("/products")}>
 					<FaShoppingCart />
 				</NavbarOption>

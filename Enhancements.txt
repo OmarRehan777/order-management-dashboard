@@ -1,2 +1,15 @@
 View All modal
 Home VS OrderHistory
+
+
+حاجات صغيرة جدًا تزود القيمة بدون تعقيد
+
+دي enhancements “بـ 30 دقيقة” وتدي شكل professional:
+
+Empty state في Home: “No active orders”
+
+Toast بعد تغيير status: “Order moved to history”
+
+Confirm بسيط قبل reject (optional)
+
+(3) Loading / Disabled state

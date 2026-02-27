@@ -1,22 +1,21 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import NavbarOptionsGroup from "./NavbarOptionsGroup";
 import Logo from "./Logo";
 import BurgerButton from "./BurgerButton";
 import NavbarOverlay from "./NavbarOverlay";
-import { usePathname } from "next/navigation";
 
 type NavbarProps = {
 	className?: string;
 };
 
 export default function Navbar({ className = "" }: NavbarProps) {
+	// state for open/close navbar in mobile view
 	const [isOpen, setIsOpen] = useState(false);
-	const currentPathName = usePathname();
 
-	useEffect(() => {
+	function closeNavbar() {
 		setIsOpen(false);
-	}, [currentPathName]);
+	}
 
 	return (
 		<div>
@@ -24,6 +23,7 @@ export default function Navbar({ className = "" }: NavbarProps) {
 			<BurgerButton isOpen={isOpen} setIsOpen={setIsOpen}></BurgerButton>
 
 			{/* overlay */}
+
 			{isOpen ? (
 				<NavbarOverlay setIsOpen={setIsOpen}></NavbarOverlay>
 			) : (
@@ -41,7 +41,7 @@ export default function Navbar({ className = "" }: NavbarProps) {
 				{/* logo */}
 				<Logo></Logo>
 
-				<NavbarOptionsGroup></NavbarOptionsGroup>
+				<NavbarOptionsGroup closeNavbar={closeNavbar}></NavbarOptionsGroup>
 			</div>
 		</div>
 	);

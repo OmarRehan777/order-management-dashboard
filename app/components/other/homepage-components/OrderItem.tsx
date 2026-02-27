@@ -1,15 +1,22 @@
-import type { ReactNode } from "react";
+import { getProduct } from "../../../lib/productMap";
+import ProductImage from "./ProductImage";
 
 type OrderItemProps = {
-	item: string;
-	count: number;
+	quantity: number;
+	productId: string;
 };
 
-export default function OrderItem({ item, count }: OrderItemProps) {
+// this component is responsible for rendering each item in the order card, it receives the productId and quantity as props, then it uses the productId to get the product name and image from the productMap, and renders them in a nice layout
+export default function OrderItem({ quantity, productId }: OrderItemProps) {
+	const src = getProduct(productId)?.imagePath;
+	const name = getProduct(productId)?.name || "Unknown Product";
 	return (
-		<div className="rounded-xl bg-grey-1 w-full h-4/10 text-xl font-bold flex justify-between items-center px-4">
-			<span>{item}</span>
-			<span>{`X${count}`}</span>
+		<div className="rounded-xl bg-grey-1 w-full h-3/10  text-lg font-semibold flex justify-between items-center px-4">
+			<div className="order-item-data flex items-center gap-2">
+				<span className="text-xs xs:text-sm font-normal">{`X${quantity}`}</span>
+				<span className="text-base xs:text-lg ">{name}</span>
+			</div>
+			<ProductImage src={src} alt={name}></ProductImage>
 		</div>
 	);
 }

@@ -12,7 +12,7 @@ export default function NavbarOption({
 	name,
 	active,
 }: NavbarOptionProps) {
-	const iconsStyles = "text-2xl  shrink-0";
+	const iconsStyles = "text-xl  shrink-0";
 
 	const icon = cloneElement(children, {
 		className: `${active ? "text-orange-3" : "text-white"}  ${iconsStyles}`,
@@ -20,7 +20,7 @@ export default function NavbarOption({
 	return (
 		<div
 			className={` clickable 
-				 w-full h-12 p-2 flex items-center gap-4 text-lg font-medium rounded-lg
+				 w-full h-12 p-2 flex items-center gap-4 text-base font-medium rounded-lg
 				  ${
 						active
 							? "text-orange-3 border border-orange-3"
