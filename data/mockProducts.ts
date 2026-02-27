@@ -34,7 +34,7 @@ const mockProducts: Product[] = [
 		name: "Ice coffee",
 		price: 70,
 		isAvailable: true,
-		imagePath: "/images/products/iceCoffee.jpg",
+		imagePath: "/images/products/icecoffee.jpg",
 	},
 ];
 
