@@ -66,11 +66,9 @@ Add your deployed Vercel link here:
 
 
 ![Home Mobile](screenshots/screenshots-04-home-mobile.png)
-
 ![Order History Mobile](screenshots/screenshots-05-order-history-mobile.png)
 
 ![Order Details Mobile](screenshots/screenshots-06-order-details-mobile.png)
-
 ![Mobile Sidebar](screenshots/screenshots-07-mobile-navbar.png)
 
 ---
