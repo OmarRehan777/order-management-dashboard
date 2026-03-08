@@ -1,11 +1,9 @@
 import Link from "next/link";
 
-export default function RowLink() {
-	const orderIdTest = 123;
-
+export default function RowLink({ orderId }: { orderId: string }) {
 	return (
 		<Link
-			href={`/order_history/${orderIdTest}`}
+			href={`/order_history/${orderId}`}
 			className="absolute inset-0"
 			aria-label="open order details"
 		></Link>

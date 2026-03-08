@@ -1,11 +1,16 @@
-export type OrderStatus = "pending" | "preparing" | "completed";
+export type OrderStatus =
+	| "pending"
+	| "preparing"
+	| "completed"
+	| "delivered"
+	| "cancelled";
 
 export type PaymentMethod = "cash" | "card";
 
 export type OrderItem = {
 	id: string;
 	productId: string;
-	quantity: number; 
+	quantity: number;
 	unitPriceAtOrder: number; // Snapshot to ensure price consistency even if product price changes later
 };
 

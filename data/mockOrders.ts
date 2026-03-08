@@ -1,6 +1,5 @@
 import type { Order } from "../types/order";
 
-
 const mockOrders: Order[] = [
 	{
 		id: "ord_215",
@@ -732,6 +731,334 @@ const mockOrders: Order[] = [
 			{
 				id: "itm_54",
 				productId: "prd_latte",
+				quantity: 1,
+				unitPriceAtOrder: 50,
+			},
+		],
+	},
+	{
+		id: "ord_256",
+		orderNumber: 256,
+		customerName: "Mohamed Salah",
+		status: "delivered", // New Status
+		createdAtISO: "2026-02-27T09:00:00Z",
+		paymentMethod: "card",
+		items: [
+			{
+				id: "itm_55",
+				productId: "prd_iceCoffee",
+				quantity: 2,
+				unitPriceAtOrder: 70,
+			},
+		],
+	},
+	{
+		id: "ord_257",
+		orderNumber: 257,
+		customerName: "Zaki Chan",
+		status: "cancelled", // New Status
+		createdAtISO: "2026-02-27T10:30:00Z",
+		paymentMethod: "cash",
+		items: [
+			{
+				id: "itm_56",
+				productId: "prd_espresso",
+				quantity: 1,
+				unitPriceAtOrder: 30,
+			},
+		],
+	},
+	{
+		id: "ord_258",
+		orderNumber: 258,
+		customerName: "Ahmed Helmy",
+		status: "delivered",
+		createdAtISO: "2026-02-27T11:45:00Z",
+		paymentMethod: "card",
+		items: [
+			{
+				id: "itm_57",
+				productId: "prd_latte",
+				quantity: 1,
+				unitPriceAtOrder: 55,
+			},
+			{
+				id: "itm_58",
+				productId: "prd_cappuccino",
+				quantity: 1,
+				unitPriceAtOrder: 45,
+			},
+		],
+	},
+	{
+		id: "ord_259",
+		orderNumber: 259,
+		customerName: "Mona El Shazly",
+		status: "pending",
+		createdAtISO: "2026-02-27T13:20:00Z",
+		paymentMethod: "cash",
+		items: [
+			{
+				id: "itm_59",
+				productId: "prd_mocha",
+				quantity: 2,
+				unitPriceAtOrder: 60,
+			},
+		],
+	},
+	{
+		id: "ord_260",
+		orderNumber: 260,
+		customerName: "Yasmine Sabry",
+		status: "preparing",
+		createdAtISO: "2026-02-27T15:10:00Z",
+		paymentMethod: "card",
+		items: [
+			{
+				id: "itm_60",
+				productId: "prd_iceCoffee",
+				quantity: 1,
+				unitPriceAtOrder: 70,
+			},
+		],
+	},
+	{
+		id: "ord_261",
+		orderNumber: 261,
+		customerName: "Amir Karara",
+		status: "delivered",
+		createdAtISO: "2026-02-27T16:40:00Z",
+		paymentMethod: "cash",
+		items: [
+			{
+				id: "itm_61",
+				productId: "prd_espresso",
+				quantity: 3,
+				unitPriceAtOrder: 30,
+			},
+		],
+	},
+	{
+		id: "ord_262",
+		orderNumber: 262,
+		customerName: "Asser Yassin",
+		status: "cancelled",
+		createdAtISO: "2026-02-27T18:00:00Z",
+		paymentMethod: "card",
+		items: [
+			{
+				id: "itm_62",
+				productId: "prd_latte",
+				quantity: 1,
+				unitPriceAtOrder: 50,
+			},
+		],
+	},
+	{
+		id: "ord_263",
+		orderNumber: 263,
+		customerName: "Donia Samir Ghanem",
+		status: "delivered",
+		createdAtISO: "2026-02-28T08:20:00Z",
+		paymentMethod: "cash",
+		items: [
+			{
+				id: "itm_63",
+				productId: "prd_cappuccino",
+				quantity: 2,
+				unitPriceAtOrder: 45,
+			},
+		],
+	},
+	{
+		id: "ord_264",
+		orderNumber: 264,
+		customerName: "Eyad Nassar",
+		status: "preparing",
+		createdAtISO: "2026-02-28T09:50:00Z",
+		paymentMethod: "card",
+		items: [
+			{
+				id: "itm_64",
+				productId: "prd_mocha",
+				quantity: 1,
+				unitPriceAtOrder: 60,
+			},
+		],
+	},
+	{
+		id: "ord_265",
+		orderNumber: 265,
+		customerName: "Kinda Alloush",
+		status: "pending",
+		createdAtISO: "2026-02-28T11:15:00Z",
+		paymentMethod: "cash",
+		items: [
+			{
+				id: "itm_65",
+				productId: "prd_latte",
+				quantity: 2,
+				unitPriceAtOrder: 55,
+			},
+		],
+	},
+	{
+		id: "ord_266",
+		orderNumber: 266,
+		customerName: "Mohamed Ramadan",
+		status: "delivered",
+		createdAtISO: "2026-02-28T12:45:00Z",
+		paymentMethod: "card",
+		items: [
+			{
+				id: "itm_66",
+				productId: "prd_iceCoffee",
+				quantity: 4,
+				unitPriceAtOrder: 70,
+			},
+		],
+	},
+	{
+		id: "ord_267",
+		orderNumber: 267,
+		customerName: "Angham",
+		status: "cancelled",
+		createdAtISO: "2026-02-28T14:30:00Z",
+		paymentMethod: "cash",
+		items: [
+			{
+				id: "itm_67",
+				productId: "prd_espresso",
+				quantity: 1,
+				unitPriceAtOrder: 30,
+			},
+		],
+	},
+	{
+		id: "ord_268",
+		orderNumber: 268,
+		customerName: "Ahmed Ezz",
+		status: "delivered",
+		createdAtISO: "2026-02-28T16:00:00Z",
+		paymentMethod: "card",
+		items: [
+			{
+				id: "itm_68",
+				productId: "prd_latte",
+				quantity: 1,
+				unitPriceAtOrder: 50,
+			},
+		],
+	},
+	{
+		id: "ord_269",
+		orderNumber: 269,
+		customerName: "Ruby",
+		status: "preparing",
+		createdAtISO: "2026-02-28T17:20:00Z",
+		paymentMethod: "cash",
+		items: [
+			{
+				id: "itm_69",
+				productId: "prd_cappuccino",
+				quantity: 1,
+				unitPriceAtOrder: 45,
+			},
+		],
+	},
+	{
+		id: "ord_270",
+		orderNumber: 270,
+		customerName: "Tamer Ashour",
+		status: "delivered",
+		createdAtISO: "2026-03-01T08:10:00Z",
+		paymentMethod: "card",
+		items: [
+			{
+				id: "itm_70",
+				productId: "prd_mocha",
+				quantity: 2,
+				unitPriceAtOrder: 60,
+			},
+		],
+	},
+	{
+		id: "ord_271",
+		orderNumber: 271,
+		customerName: "Nicole Saba",
+		status: "pending",
+		createdAtISO: "2026-03-01T09:40:00Z",
+		paymentMethod: "cash",
+		items: [
+			{
+				id: "itm_71",
+				productId: "prd_espresso",
+				quantity: 2,
+				unitPriceAtOrder: 30,
+			},
+		],
+	},
+	{
+		id: "ord_272",
+		orderNumber: 272,
+		customerName: "Majid Al Muhandis",
+		status: "delivered",
+		createdAtISO: "2026-03-01T11:00:00Z",
+		paymentMethod: "card",
+		items: [
+			{
+				id: "itm_72",
+				productId: "prd_latte",
+				quantity: 1,
+				unitPriceAtOrder: 55,
+			},
+		],
+	},
+	{
+		id: "ord_273",
+		orderNumber: 273,
+		customerName: "Hussain Al Jassmi",
+		status: "delivered",
+		createdAtISO: "2026-03-01T12:30:00Z",
+		paymentMethod: "cash",
+		items: [
+			{
+				id: "itm_73",
+				productId: "prd_iceCoffee",
+				quantity: 1,
+				unitPriceAtOrder: 70,
+			},
+		],
+	},
+	{
+		id: "ord_274",
+		orderNumber: 274,
+		customerName: "Elissa",
+		status: "cancelled",
+		createdAtISO: "2026-03-01T14:15:00Z",
+		paymentMethod: "card",
+		items: [
+			{
+				id: "itm_74",
+				productId: "prd_cappuccino",
+				quantity: 1,
+				unitPriceAtOrder: 45,
+			},
+			{
+				id: "itm_75",
+				productId: "prd_espresso",
+				quantity: 1,
+				unitPriceAtOrder: 50,
+			},
+			{
+				id: "itm_76",
+				productId: "prd_latte",
+				quantity: 1,
+				unitPriceAtOrder: 50,
+			},
+			{
+				id: "itm_77",
+				productId: "prd_mocha",
 				quantity: 1,
 				unitPriceAtOrder: 50,
 			},

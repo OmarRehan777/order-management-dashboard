@@ -1,40 +1,53 @@
 import RowLink from "./RowLink";
+import type { Order } from "../../../types/order";
+import { formatOrderDate } from "../../lib/dateFormatters";
+import { calcOrderTotal } from "../../lib/calcOrderTotal";
 
-export default function OrderRow() {
+export default function OrderRow({ order }: { order: Order }) {
+	// Format the order's creation date for display
+	const orderDateObject = formatOrderDate(order.createdAtISO);
 	return (
-		<tr className="bg-grey-3 rounded-lg hover:bg-grey-4 clickable active:scale-[1.01] relative">
+		<tr className="bg-grey-3 rounded-lg hover:bg-grey-4 clickable active:scale-[1.01] relative text-sm font-medium">
 			{/* --------------------           ID                 ---------------------------------- */}
-			<td className=" ID px-4 py-3 rounded-l-lg relative">
-				<RowLink></RowLink>
-				#215
+			<td className=" ID px-4 py-3 rounded-l-lg relative hidden sm:table-cell">
+				<RowLink orderId={order.id}></RowLink>
+				{order.id}
 			</td>
 			{/* --------------------         Customer             ---------------------------------- */}
-			<td className=" Customer px-4 py-3 relative">
-				<RowLink></RowLink>
-				Jeremmy Passion
-			</td>
-			{/* --------------------           menu               ---------------------------------- */}
-			<td className=" Menu px-4 py-3 hidden sm:table-cell relative ">
-				<RowLink></RowLink>
-				Loin of Venison (2)
+			<td className=" Customer px-4 py-3 relative rounded-l-lg sm:rounded-l-none">
+				<RowLink orderId={order.id}></RowLink>
+				{order.customerName}
 			</td>
 			{/* --------------------           date               ---------------------------------- */}
-			<td className=" Date px-4 py-3 hidden xs:table-cell relative">
-				<RowLink></RowLink>
-				<span>22 Mei 2021,</span>{" "}
-				<span className="whitespace-nowrap">12:21 PM</span>
+			<td className=" Date px-4 py-3 relative hidden xxxs:table-cell">
+				<RowLink orderId={order.id}></RowLink>
+				<span>{orderDateObject.date}</span>{" "}
+				<span className="whitespace-nowrap hidden xs:inline">
+					at {orderDateObject.time}
+				</span>
+			</td>
+			{/* --------------------         Total             ---------------------------------- */}
+			<td className=" Total px-4 py-3 relative hidden xs:table-cell">
+				<RowLink orderId={order.id}></RowLink>
+				{calcOrderTotal(order.items).toFixed(2)} EGP
 			</td>
 			{/* --------------------           Status             ---------------------------------- */}
-			<td className=" Status px-4 py-3 rounded-r-lg relative ">
-				<RowLink></RowLink>
+			<td className=" Status px-4 py-3 rounded-r-lg relative  ">
+				<RowLink orderId={order.id}></RowLink>
 
 				{/* order status */}
-				<span
-					className="inline-flex items-center rounded-full px-3 py-1
-					text-xs font-medium gradient-orange text-white "
-				>
-					COMPLETED
-				</span>
+				<div className="flex justify-end items-center w-full relative ">
+					{/* <RowLink orderId={order.id}></RowLink> */}
+
+					{/* order status */}
+					<span
+						className={`inline-flex items-center rounded-full px-3 py-1
+            font-medium text-white 
+            ${order.status === "cancelled" ? `bg-grey-4 ` : `bg-grey-1 `} `}
+					>
+						{order.status}
+					</span>
+				</div>
 			</td>
 		</tr>
 	);

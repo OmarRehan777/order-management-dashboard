@@ -1,14 +1,13 @@
-
 type NavbarOverlayProps = {
-	setIsOpen: (isOpen: boolean) => void;
+	closeNavbar: () => void;
 };
 
-export default function NavbarOverlay({ setIsOpen }: NavbarOverlayProps) {
+export default function NavbarOverlay({ closeNavbar }: NavbarOverlayProps) {
 	return (
 		<div
-			onClick={() => setIsOpen(false)}
+			onClick={closeNavbar}
 			className="
-      fixed inset-0 bg-black/40 backdrop-blur-xs z-10 lg:hidden
+      fixed inset-0 bg-black/40 backdrop-blur-xs z-60 lg:hidden
     "
 		/>
 	);

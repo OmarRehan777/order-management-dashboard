@@ -1,4 +1,6 @@
 "use client";
+// This component renders the group of navigation options in the navbar. It uses the usePathname hook to determine the current URL and applies an active style to the corresponding navigation option. It also calls the closeNavbar function when a navigation link is clicked to close the mobile navbar if it's open.
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IoMdHome } from "react-icons/io";
@@ -7,7 +9,7 @@ import { IoStatsChart } from "react-icons/io5";
 import NavbarOption from "./NavbarOption";
 
 type NavbarOptionsGroupProps = {
-	closeNavbar: () => void;
+	closeNavbar?: () => void;
 };
 
 export default function NavbarOptionsGroup({
@@ -28,7 +30,7 @@ export default function NavbarOptionsGroup({
 
 	return (
 		/* This container holds all navigation choices in a vertical list */
-		<div className="w-full flex-1 flex flex-col items-center justify-start gap-2">
+		<div className="w-full flex-1 flex flex-col items-center justify-start gap-2 ">
 			{/*---------------------------------------------------------------------------------------------*/}
 			{/* Home Navigation Link */}
 			<Link href={"/"} className="w-full" onClick={closeNavbar}>
