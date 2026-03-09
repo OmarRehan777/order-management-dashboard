@@ -1,5 +1,7 @@
 # Order Management Dashboard (OMD)
 
+![Order Management Dashboard Thumbnail](public/images/Thumbnail.png)
+
 A responsive admin dashboard for managing and reviewing cafe orders, built with Next.js, TypeScript, and Tailwind CSS.
 The project focuses on clean layout structure, reusable UI components, and a clear separation between interface logic and order-related domain logic.
 
@@ -9,9 +11,7 @@ The project focuses on clean layout structure, reusable UI components, and a cle
 
 Add your deployed Vercel link here:
 
-[Live Demo](https://omar-portfolio-3y3w.vercel.app/)
-
----
+## [Live Demo](https://order-management-dashboard-sigma.vercel.app/)
 
 ## Tech Stack
 
