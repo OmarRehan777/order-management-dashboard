@@ -43,7 +43,7 @@ export function OrdersProvider({ children }: { children: ReactNode }) {
 	// Memoize the context value to prevent unnecessary re-renders
 	const value = useMemo(
 		() => ({ orders, setOrders, updateOrderStatus, getOrderById }),
-		[orders],
+		[orders, updateOrderStatus, getOrderById],
 	);
 
 	return (

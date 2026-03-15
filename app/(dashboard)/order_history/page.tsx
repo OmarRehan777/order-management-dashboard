@@ -1,6 +1,6 @@
 import OrderTable from "./OrdersTable";
 
-export default function page() {
+export default function OrderHistoryPage() {
 	return (
 		<>
 			<OrderTable></OrderTable>

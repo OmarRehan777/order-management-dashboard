@@ -11,7 +11,7 @@ The project focuses on clean layout structure, reusable UI components, and a cle
 
 Add your deployed Vercel link here:
 
-## [Live Demo](https://order-management-dashboard-sigma.vercel.app/)
+## [Live Demo](https://cairo-cafe.vercel.app/)
 
 ## Tech Stack
 
@@ -55,15 +55,11 @@ Add your deployed Vercel link here:
 
 ## Desktop:
 
-
 ![Home Desktop](screenshots/screenshots-01-home-desktop.png)
 ![Order History Desktop](screenshots/screenshots-02-order-history-desktop.png)
 ![Order Details Desktop](screenshots/screenshots-03-order-details-desktop.png)
 
-
-
 ## Mobile:
-
 
 ![Home Mobile](screenshots/screenshots-04-home-mobile.png)
 ![Order History Mobile](screenshots/screenshots-05-order-history-mobile.png)

@@ -7,7 +7,10 @@ type ProductImageProps = {
 
 export default function ProductImage({ src, alt }: ProductImageProps) {
 	return (
-		<div className="relative aspect-square w-12 xs:w-14 overflow-hidden rounded-xl bg-grey-3/40">
+		<div
+			className="relative aspect-square w-12 xs:w-14 overflow-hidden rounded-xl
+			bg-grey-3/40 -ml-2"
+		>
 			<Image
 				src={src ?? "/images/products/placeholder.png"}
 				alt={alt}

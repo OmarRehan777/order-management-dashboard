@@ -11,12 +11,12 @@ export default function OrderItem({ quantity, productId }: OrderItemProps) {
 	const src = getProductById(productId)?.imagePath;
 	const name = getProductById(productId)?.name || "Unknown Product";
 	return (
-		<div className="rounded-xl bg-grey-1 w-full h-3/10  text-lg font-semibold flex justify-between items-center px-4">
+		<div className="rounded-xl bg-grey-1 w-full h-3/10 font-semibold flex justify-between items-center px-4 text-base xs:text-lg">
 			<div className="order-item-data flex items-center gap-2">
-				<span className="text-xs xs:text-sm font-normal">{`X${quantity}`}</span>
-				<span className="text-base xs:text-lg ">{name}</span>
+				<ProductImage src={src} alt={name}></ProductImage>
+				<span className="">{name}</span>
 			</div>
-			<ProductImage src={src} alt={name}></ProductImage>
+			<span className="">{`× ${quantity}`}</span>
 		</div>
 	);
 }

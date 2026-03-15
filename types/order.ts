@@ -17,9 +17,10 @@ export type OrderItem = {
 export type Order = {
 	id: string;
 	orderNumber: number;
-	customerName: string;
+	customerName?: string;
 	status: OrderStatus;
 	createdAtISO: string; // "2026-01-03T15:34:00Z"
 	items: OrderItem[];
 	paymentMethod: PaymentMethod;
+	notes?: string;
 };

@@ -13,7 +13,7 @@ type LayoutProps = {
 	children: ReactNode;
 };
 
-export default function layout({ children }: LayoutProps) {
+export default function DashboardLayout({ children }: LayoutProps) {
 	// state for open/close navbar in mobile view
 	const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 

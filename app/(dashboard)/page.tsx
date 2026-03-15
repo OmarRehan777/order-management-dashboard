@@ -4,7 +4,7 @@ import OrderCard from "../components/other/homepage-components/OrderCard";
 import { useOrders } from "../lib/ordersContext";
 import { isActiveOrder } from "../lib/orderFilters";
 
-export default function page() {
+export default function HomePage() {
 	// Get orders from context
 	const { orders } = useOrders();
 

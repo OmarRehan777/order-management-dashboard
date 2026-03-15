@@ -3,6 +3,7 @@ import OrderItem from "./OrderItem";
 import OrderStatusCard from "./OrderStatusCard";
 import { Order } from "../../../../types/order";
 import { calcOrderTotal } from "../../../lib/calcOrderTotal";
+import { formatOrderDate } from "../../../lib/dateFormatters";
 
 type orderCardProps = { order: Order };
 
@@ -10,17 +11,13 @@ export default function OrderCard({ order }: orderCardProps) {
 	return (
 		<div className=" order-card-container transition-transform hover:-translate-y-2 duration-300 shrink-0 w-60 h-80 xs:w-80 xs:h-100 gradient-grey-4 rounded-2xl p-4 flex flex-col justify-between ">
 			{/* ---------------------------- header ---------------------------------- */}
-			<div className="card-header  h-1/8 pb-1 flex justify-between ">
+			<div className="card-header  h-1/8 pb-1 flex justify-between border-b border-grey-5/40 ">
 				<div className="order-meta-data flex flex-col justify-center">
 					<div className="order-number font-bold">
 						#{order.orderNumber}
 					</div>
 					<div className="order-date text-xs font-normal text-grey-5">
-						{order.createdAtISO
-							.slice(0, 16)
-							.replace("Z", " ")
-							.split("T")
-							.join(" at ")}
+						{formatOrderDate(order.createdAtISO).full}
 					</div>
 				</div>
 				<div className="order-customer-data  shrink-0 text-sm xs:text-base font-medium">
@@ -46,7 +43,7 @@ export default function OrderCard({ order }: orderCardProps) {
 
 			{/* ---------------------------- footer ----------------------------------- */}
 			<div className="card-footer pt-1  border-t border-grey-5/40  h-1/7 flex justify-between items-end">
-				<div className="order-summary h-11/12 flex flex-col justify-center ">
+				<div className="order-summary h-11/12 flex flex-col justify-center ml-2">
 					<div className="order-total text-base font-medium">
 						{calcOrderTotal(order.items).toFixed(2)} EGP
 					</div>
